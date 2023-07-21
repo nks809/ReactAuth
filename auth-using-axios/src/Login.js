@@ -46,7 +46,8 @@ export const Login = () => {
             
             <button type='submit'>Sign in</button>
         </form>
-    </section>}
+    </section>
+    }
     </>
   )
 }
