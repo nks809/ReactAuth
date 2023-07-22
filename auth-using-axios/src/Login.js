@@ -21,9 +21,13 @@ export const Login = () => {
     const handleSubmit = async(e)=>{
         e.preventDefault()
         try{
-          const res= Axios.post("/auth")
+          const res= await Axios.post("/auth")
+          setSuccess(true)
+          setPassword('')
+          setUserName('')
         }catch(err){
           setErrMsg('Error: Either username or password incorrect')
+          console.error(err)
         }
     }
 
@@ -46,6 +50,10 @@ export const Login = () => {
             
             <button type='submit'>Sign in</button>
         </form>
+        <p>Need an account?</p>
+        <span className='line'>
+          <a href='#'>Sign Up</a>
+        </span>
     </section>
     }
     </>
